@@ -26,7 +26,6 @@ $(call inherit-product, vendor/dot/config/common.mk)
 
 # Boot Animation
 TARGET_GAPPS_ARCH := arm64
-DOT_BUILD_TYPE := BETA
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SCREEN_DENSITY := 420
 TARGET_SUPPORTS_BLUR := true
