@@ -22,21 +22,29 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/instantnoodle/device.mk)
 
 # Inherit some common PixelExperience stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/dot/config/common.mk)
 
 # Boot Animation
+TARGET_GAPPS_ARCH := arm64
+DOT_BUILD_TYPE := BETA
 TARGET_BOOT_ANIMATION_RES := 1080
-
+TARGET_SCREEN_DENSITY := 420
+TARGET_SUPPORTS_BLUR := true
+EXTRA_FOD_ANIMATIONS := true
+TARGET_USES_FACE_UNLOCK := true
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := aosp_instantnoodle
+PRODUCT_NAME := dot_instantnoodle
 PRODUCT_DEVICE := instantnoodle
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := IN2013
+PRODUCT_MODEL := IN2010
 CUSTOM_DEVICE := OnePlus8
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=OnePlus8 \
-    PRODUCT_NAME=OnePlus8
+    PRODUCT_NAME=OnePlus8 \
+    PRIVATE_BUILD_DESC="redfin-user 11 RQ2A.210305.007 7124944 release-keys"
+
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210305.007/7124944:user/release-keys
